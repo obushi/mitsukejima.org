@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>見附島アーカイブ Mitsukejima Archive</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="site-title">
+            <a href="index.html" id="site-title-link">
+                <img src="images/logo.svg" alt="見附島アーカイブ Logo" id="site-logo">
+                <h1 id="site-title">見附島アーカイブ</h1>
+            </a>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#history" id="nav-history">見附島の歴史</a></li>
+                <li><a href="#damage" id="nav-damage">地震被害</a></li>
+                <li><a href="#photos" id="nav-photos">写真収集</a></li>
+            </ul>
+        </nav>
+        <div class="language-selector-container">
+            <svg id="globe-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <select id="language-selector">
+                <option value="ja">JA</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div class="slider-container">
+            <div class="slider">
+                <img src="images/image1.jpg" alt="見附島 Image 1" class="slide active">
+                <img src="images/image2.jpg" alt="見附島 Image 2" class="slide">
+                <img src="images/image3.jpg" alt="見附島 Image 3" class="slide">
+                <img src="images/image4.jpg" alt="見附島 Image 4" class="slide">
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+        <div class="content-wrapper">
+            <section id="history">
+                <h2 id="history-title">見附島の歴史</h2>
+                <p id="history-text">ここに「見附島の歴史」に関する文章が入ります。弘法大師が佐渡島から能登半島へ渡る際に、この島を見つけて「見附島」と名付けたという伝説があります。</p>
+            </section>
+            <section id="damage">
+                <h2 id="damage-title">地震の被害</h2>
+                <p id="damage-text">ここに「地震の被害」に関する文章が入ります。近年発生した地震により、島の形状に変化がありました。被害の状況と復興への取り組みについて説明します。</p>
+            </section>
+            <section id="photos">
+                <h2 id="photos-title">写真の収集</h2>
+                <p id="photos-text">ここに「写真の収集」に関する文章が入ります。昔から現在までの見附島の写真を募集しています。提供方法や注意事項について記載します。</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mitsukejima Archive Project</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

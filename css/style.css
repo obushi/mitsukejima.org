@@ -1,0 +1,206 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 1rem 2rem; /* Add more horizontal padding */
+    border-bottom: 1px solid #ddd;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.site-title {
+    grid-column: 1 / 2;
+    justify-self: start;
+}
+
+#site-title-link {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Adjust space between logo and text */
+    text-decoration: none;
+    color: #333;
+}
+
+#site-logo {
+    height: 72px; /* Adjust the height of the logo as needed */
+    width: auto;
+}
+
+.site-title h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav {
+    grid-column: 2 / 3;
+    justify-self: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.language-selector-container {
+    grid-column: 3 / 4;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+}
+
+#globe-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    color: #333; /* Or use stroke: #333; */
+}
+
+#language-selector {
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+nav ul li {
+    margin: 0 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%; /* Let the container be full-width relative to its parent */
+    max-width: 800px;
+    margin: 2rem auto;
+    overflow: hidden; /* This is the viewport, hiding parts of slides outside */
+}
+
+.slider {
+    display: flex;
+    /* A gap between the slides. A fixed value is often more stable. */
+    gap: 16px; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    /* Make each slide narrower than the container to leave room for others */
+    width: 80%; 
+    flex-shrink: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0.4;
+    transform: scale(0.9);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    z-index: 10;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.content-wrapper section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.content-wrapper section:last-child {
+    border-bottom: none;
+}
+
+.content-wrapper h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.content-wrapper p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 768px) {
+    header {
+        /* On mobile, create a two-column layout: 
+           - Column 1: Site Title (takes up remaining space)
+           - Column 2: Language Selector (fits its content) */
+        grid-template-columns: 1fr auto;
+        padding: 1rem;
+    }
+
+    /* Hide the main navigation menu completely on mobile */
+    #main-nav {
+        display: none;
+    }
+
+    /* Ensure the site title stays in the first column */
+    .site-title {
+        grid-column: 1 / 2;
+        justify-self: start;
+    }
+
+    /* Ensure the language selector stays in the second column */
+    .language-selector-container {
+        grid-column: 2 / 3;
+        justify-self: end;
+    }
+}
